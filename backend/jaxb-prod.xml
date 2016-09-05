@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Prod>
+    <gtin>1234</gtin>
+    <name>Milka</name>
+    <brand>Oreo</brand>
+    <description>bla</description>
+    <price>1.2</price>
+    <email>ionescu@yahoo.com</email>
+</Prod>

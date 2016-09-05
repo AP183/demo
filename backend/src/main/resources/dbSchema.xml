@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cassandra>
+	<keyspaces>
+		<keyspace>create keyspace if not exists edu WITH REPLICATION = {
+			'class' : 'SimpleStrategy', 'replication_factor' : 3 }
+		</keyspace>
+	</keyspaces>
+
+	<use>
+		use edu
+	</use>
+
+	<tables>
+		 
+		<table>create table if not exists users (
+			firstname text, lastname text, email text, phone int, 
+			password text, role text, status text, primary key
+			(email) )
+		</table>
+
+		<table>create table if not exists assignments (
+			 id text, title text,subject text, description text, 
+			   primary key (id)) 			 
+		</table>
+		
+		<table>create table if not exists assignment_by_teacher (
+			id text, name text, subject text, description text, 
+			primary key (gtin, email) ) 			 
+		</table>
+		
+		<table>create table if not exists assignment_by_student(
+			id text, title text,subject text, description text,
+			email text, primary key (id) )  
+			 
+		</table>
+		 
+	</tables>
+
+	 
+
+	<sql>
+	</sql>
+</cassandra>
