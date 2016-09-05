@@ -1,0 +1,24 @@
+
+<div class="wrapper-menu " ng-controller="homeController">
+	<div style="text-align:center; color:  #004466; margin-bottom: 30px;">
+		<br><br>
+		<h1>Assignments Administration</h1>
+	</div>
+		<ul>
+			<li><a class="btn btn-menu" href="#/teacherAdministration" ng-show="role == 'Teacher'">Teacher</a></li>
+			<li><a class="btn btn-menu" href="#/studentAdministration" ng-show="role == 'Student'">Student</a></li>
+			<li><a class="btn btn-menu" href="#/adminAdministration" ng-show="role == 'Admin'">Admin</a></li>
+			<li style="float:right"><a class="btn btn-menu" ng-click="logout()" ng-show="isAuth">Logout</a></li>
+			<li style="float:right">
+		
+			<li style="float:right" ><a class="btn btn-menu" href="#/mycart" ng-show="role == 'Student'" uib-popover-template="'view/htmlPopover.html'" popover-placement="bottom" class="btn btn-default"  popover-trigger="outsideClick" popover-is-open="popoverIsOpen"
+    ng-mouseenter="popoverIsOpen = !popoverIsOpen"><i class="glyphicon glyphicon-leaf"></i>&nbsp; Solved</a>				
+			</li>
+			
+			<li style="float:right; color:  #004466; margin-top: 6px;"><h5 ng-if="isAuth"><i><b>{{email}} &nbsp;</b></i></h5></li>
+			<li style="float:right"i><a class="btn btn-menu" href="#/login" ng-show="!isAuth">Login</a></li>
+		</ul>																										
+	
+	 
+</div>
+

@@ -1,0 +1,73 @@
+
+<!doctype html>
+<head>
+	<title>Solutions</title>
+	<style type="text/css">
+		[ng\:cloak], [ng-cloak], .ng-cloak {
+			display: none !important;
+		}
+	</style>
+</head>
+
+<div class="wrapper">
+	<div class="container">
+		<div class="row">
+		  <div class="col-lg-20">
+		    <div class="panel panel-primary">
+		         <div class="panel-heading">
+		             <h3 class="panel-title">List of solutions</h3>
+		         </div>
+		         <div class="panel-body">
+		                 <table class="table table-bordered table-hover table-striped" ng-table="ngTableParams">
+		                     <tbody>
+		                            
+		                         <tr>
+		                             <th class="col-lg-1">
+		                                 <div>ID</div>
+		                             </th>
+		                             <th class="col-lg-2">
+		                                 <div>Title</div>
+		                             </th>
+		                             <th class="col-lg-3">
+		                                 <div>Subject</div>
+		                             </th>
+		                             <th class="col-lg-4">
+		                                 <div>Description</div>
+		                             </th>
+		                              <th class="col-lg-5">
+		                                 <div>Email</div>
+		                             </th>
+		                             <th class="col-lg-6">
+		                                 <div>Preview XML</div>
+		                             </th>
+		                         	
+		                         </tr>
+		                        
+		                         <tr ng-repeat="solutions in $data">
+		                             <td>
+		                              {{solutions.id}}
+		                             </td>
+		                             <td>
+		                                 {{solutions.title}}
+		                             </td>
+		                              <td>
+		                                 {{solutions.subject}}
+		                             </td>
+		                             <td>
+		                                 {{solutions.description}}
+		                             </td>
+		                             <td>
+		                                 {{solutions.email}} 
+		                             </td>
+		                             <td>
+		                             	<button class="btn btn-default" ng-click="preview(solutions)">PREVIEW XML</button>
+		                             </td>
+		                         </tr>
+		                     </tbody>
+		                 </table>
+		             </div>
+		          </div>
+		        </div>
+	   	 </div>
+	  </div>
+</div>

@@ -1,0 +1,33 @@
+<!doctype html>
+<html ng-app>
+	 
+	<head>
+		<link href="css/angular-bootstrap.css" rel="stylesheet">
+		<style type="text/css">
+		[ng\:cloak], [ng-cloak], .ng-cloak {
+			display: none !important;
+		}
+		</style>
+	</head>
+	
+	
+	
+	<body>
+		<div class="wrapper" ng-controller="homeController">
+		<h3> Login </h3> <br>
+			<form>
+				 <div class="col-xs-3">
+					  <label>Email:</label>
+					  <input type="text" name="email"  class="form-control" ng-model="credentials.email" id="lg"><br>
+					  <label>Password:</label>
+					  <input type="password" name="password"  class="form-control" ng-model="credentials.password" id="lg">
+					  <a href="#/resetPassword" class="pull-right" >Forgot your password?</a>
+					  <br>
+					  <button class="btn btn-primary" ng-click="login()">Login</button>
+					  <a class="btn btn-primary" href="#/createAccount">Create account</a>
+				  </div>
+			</form>
+			
+		</div>
+	</body>
+</html>

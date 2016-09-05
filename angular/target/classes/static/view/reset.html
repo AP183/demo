@@ -1,0 +1,35 @@
+<!doctype html>
+<html ng-app>
+	 
+	<head>
+		<link href="css/angular-bootstrap.css" rel="stylesheet">
+		<style type="text/css">
+		[ng\:cloak], [ng-cloak], .ng-cloak {
+			display: none !important;
+		}
+		</style>
+	</head>
+	
+	
+	
+	<body>
+		<div class="wrapper" ng-controller="homeController">
+		<h3> Reset Password </h3> <br>
+			<form>
+				 <div class="col-xs-3">
+					  <label>Email:</label> 
+					  <input type="text" name="email"  class="form-control" value="{{form.email}}" id="lg" disabled><br>
+					  <label>Old password:</label>
+					  <input type="password" name="email"  class="form-control" ng-model="form.oldpassword" id="lg"><br>
+					  <label>New password:</label>
+					  <input type="password" name="email"  class="form-control" ng-model="form.newpassword" id="lg"><br>
+					  <label>Confirm new password:</label>
+					  <input type="password" name="email"  class="form-control" ng-model="form.newpasswordconfirmed" id="lg"><br>
+					  
+					  <a class="btn btn-primary" ng-click="resetPass()">Reset password</a>
+				  </div>
+			</form>
+			
+		</div>
+	</body>
+</html>
