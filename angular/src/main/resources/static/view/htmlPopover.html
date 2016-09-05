@@ -1,0 +1,22 @@
+<div style="min-height:100px; min-width: 200px;" ng-controller="orderController">
+	
+	<div ng-if="myCart.length != 0" style="padding: 15px;">
+		<span class="pull-left"> <b> Product </b> </span> 
+		<span class="pull-right"> <b> Price </b>  </span> 
+		<br><br>
+		<div ng-repeat="product in myCart" style="font-size: 12px;"> 
+			
+				<span class="pull-left"> {{product.name}}</span> 
+				<span class="pull-right">{{product.price}} euro </span> 
+				<br>
+		</div> 
+		<br>
+		<div class="pull-right"> <b>Total:</b> {{totals}} euro</div>
+		<br> <br>
+		<button  class="btn btn-default pull-right" onclick="location.href='#/mycart'" ng-disabled="myCart.length == 0">VIEW CART</button>
+ 		<br><br>
+		<button  class="btn btn-primary pull-right" ng-click="sendOrder()" ng-disabled="myCart.length == 0"> SEND ORDER</button>
+	</div>
+	<div ng-if="myCart.length == 0" style="font-size: 13px;"> <i><b> No assignments solved</b></i> </div>
+	<br><br>
+</div>

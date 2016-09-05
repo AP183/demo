@@ -1,0 +1,101 @@
+<!doctype html>
+<head>
+	<title>Assignments</title>
+	<link href="css/angular-bootstrap.css" rel="stylesheet">
+	<style type="text/css">
+		[ng\:cloak], [ng-cloak], .ng-cloak {
+			display: none !important;
+		}
+	</style>
+</head>
+
+<div class="wrapper">
+	<div class="container">
+		<div class="row">
+		  <div class="col-lg-20">
+		    <div class="panel panel-primary">
+		         <div class="panel-heading">
+		             <h3 class="panel-title">List of assignments</h3>
+		         </div>
+		         <div class="panel-body">
+		                 <table class="table table-bordered table-hover table-striped" ng-table="ngTableParams">
+		                     <tbody>
+		                            
+		                         	<tr>
+		                             <th class="col-lg-1">
+		                                 <div>ID</div>
+		                             </th>
+		                         	<th class="col-lg-2 sortable"
+	                                    ng-class="{'sort-asc': ngTableParams.isSortBy('title', 'asc'), 'sort-desc': ngTableParams.isSortBy('title', 'desc')}"
+	                                    ng-click="ngTableParams.sorting( {'title': (ngTableParams.isSortBy('title', 'asc') ? 'desc' : 'asc') })">
+	                                    <div>Title</div>
+	                                </th> 
+		                            <th class="col-lg-2 sortable"
+	                                    ng-class="{'sort-asc': ngTableParams.isSortBy('subject', 'asc'), 'sort-desc': ngTableParams.isSortBy('subject', 'desc')}"
+	                                    ng-click="ngTableParams.sorting( {'subject': (ngTableParams.isSortBy('subject', 'asc') ? 'desc' : 'asc') })">
+ 		                                <div>Subject</div>
+		                             </th>
+		                             <th class="col-lg-4">
+		                                <div>Description</div>
+		                             </th>
+		                             <th class="col-lg-4">
+		                                <div>Solution</div>
+		                             </th>
+		                               
+		                             <th> Add to solutions </th>
+		                         </tr>
+		                         <tr>
+		                         	<th>
+	                                    <input type="text" 
+	                                        class="filter form-control"
+	                                        ng-model="ngTableFilter.id" />
+                                	</th>
+                                	<th>
+	                                    <input type="text" 
+	                                        class="filter form-control"
+	                                        ng-model="ngTableFilter.title" />
+                                	</th>
+                                	<th>
+	                                    <input type="text" 
+	                                        class="filter form-control"
+	                                        ng-model="ngTableFilter.subject" />
+                                	</th>
+                                	<th>
+	                                    <input type="text" 
+	                                        class="filter form-control"
+	                                        ng-model="ngTableFilter.description" />
+                                	</th>
+                                	<th>
+                                	</th>
+                                	<th>
+                                	</th>
+		                         </tr>
+		                         <tr ng-repeat="assignment in $data">
+		                             <td>
+		                                 {{assignment.id}}
+		                             </td>
+		                             <td>
+		                                 {{assignment.title}}
+		                             </td>
+		                              <td>
+		                                 {{assignment.subject}}
+		                             </td>
+		                             <td>
+		                                 {{assignment.description}}
+		                             </td>
+		                             <td>
+		                                 {{assignment.solution}} 
+		                             </td>
+		                             <td>
+		                             	<button class="btn btn-default" ng-click="addToCart(assignment)"><i class="glyphicon glyphicon-shopping-cart"></i> ADD </button>
+		                             </td>
+		                             
+		                         </tr>
+		                     </tbody>
+		                 </table>
+		             </div>
+		          </div>
+		        </div>
+	   	 </div>
+	  </div>
+</div>

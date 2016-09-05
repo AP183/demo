@@ -1,0 +1,43 @@
+<!doctype html>
+<html ng-app>
+ <head>
+	<link href="css/angular-bootstrap.css" rel="stylesheet">
+	<style type="text/css">
+		[ng\:cloak], [ng-cloak], .ng-cloak {
+			display: none !important;
+		}
+	</style>
+	</head>
+	
+	<body>
+		<div class="wrapper" ng-controller="assignmentsController" >
+			<h2> Add assignment </h2> <br>
+			<form name="assignmentform">
+				 <div class="col-xs-3">
+				 	<div class="form-group row" ng-class="{'has-error': assignmentform.id.$invalid}">
+				 		<label>ID:</label>
+					  	<input type="text" name="id" ng-model="assignment.id" class="form-control" id="lg" required>
+				 	</div>
+					<div class="form-group row" ng-class="{'has-error': assignmentform.name.$invalid}">
+				 		<label>Title:</label>
+					  	<input type="text" name="title" ng-model="assignment.title" class="form-control" id="lg" required>
+				 	</div>
+				 	<div class="form-group row" ng-class="{'has-error': assignmentform.brand.$invalid}">
+				 		<label>Subject:</label>
+					  	<input type="text" name="subject" ng-model="assignment.subject" class="form-control" id="lg" required>
+				 	</div>
+				 	<div class="form-group row" ng-class="{'has-error': assignmentform.description.$invalid}">
+				 		<label>Description:</label>
+					  	<textarea rows="3" name="description" ng-model="assignment.description" class="form-control" id="lg" required></textarea>
+				 	</div>
+				 	 
+				 	
+					  <br><br>
+					  <button class="btn btn-primary" ng-click="addAssignment()" ng-disabled="assignmentform.$invalid">Add assignment</button>
+				</div>
+			</form>
+			
+		</div>
+		<script src="js/angular-bootstrap.js" type="text/javascript"></script>
+	</body>
+</html>
